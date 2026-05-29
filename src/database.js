@@ -1,6 +1,9 @@
 import mongoose from "mongoose";
 
-mongoose.connect("mongodb+srv://LessHL:Lesslylora@lessh.kbexnks.mongodb.net/groceries_Less?appName=LessH")
+// Accedemos a tu cadena de conexión desde el archivo .env
+const uri = process.env.MONGODB_URI;
+
+mongoose.connect(uri)
     .then((cnn) => console.log("Conectado a MongoDB."))
     .catch((error) => console.error("Error al conectar con MongoDB.", error));
 
